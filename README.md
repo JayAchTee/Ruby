@@ -20,14 +20,16 @@ GO
 SET ANSI_PADDING ON
 GO
 
-CREATE TABLE [dbo].[Lookups](
+CREATE TABLE [dbo].[Lookups]
+(
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[text] [varchar](64) NOT NULL,
 	[value] [varchar](32) NULL,
- CONSTRAINT [PK_Lookups] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	CONSTRAINT [PK_Lookups] PRIMARY KEY CLUSTERED 
+	(
+		[id] ASC
+	) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON
+	) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
@@ -40,6 +42,7 @@ called Test and adjust the password as required.  Test is in the dbowner role fo
 a simple example.
 
 My local gems look like this:
+
 *** LOCAL GEMS ***
 
 actionmailer (4.2.4)
