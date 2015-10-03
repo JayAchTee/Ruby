@@ -21,7 +21,7 @@ SET ANSI_PADDING ON
 GO
 
 CREATE TABLE [dbo].[Lookups]
-(
+\(
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[text] [varchar](64) NOT NULL,
 	[value] [varchar](32) NULL,
