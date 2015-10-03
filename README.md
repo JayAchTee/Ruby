@@ -1,5 +1,5 @@
 # Ruby
-Some simple Ruby version 2.2.3 test to access SQL Server
+Some simple Ruby version 2.2.3 x64 test to access SQL Server
 
 These Ruby scripts are simple scripts to test various access to Microsoft SQL Server 2012 databases using DBI and Sequel gems.  
 
