@@ -8,12 +8,18 @@ p sql;
 
 p "testing sequel"
 
-cn = Sequel.odbc('Test', :user => "Test", :password => "1CANhazpazw3rd!");
+begin
+	cn = Sequel.odbc('Test', :user => "Test", :password => "1CANhazpazw3rd!");
 
-version = cn.fetch("SELECT @@VERSION AS [Version]");
+	version = cn.fetch("SELECT @@VERSION AS [Version]");
 	
-puts version[:version][:version];
+	puts (version[:version][:version]);
 
-cn.fetch(sql) do |row|
-	puts "#{row[:id]} text=\'#{row[:text]}\', value=\'#{row[:value]}\'";
+	cn.fetch(sql) do |row|
+		puts ("#{row[:id]} text=\'#{row[:text]}\', value=\'#{row[:value]}\'");
+	end;
+
+	cn.disconnect();
+rescue 
+	puts ("Exception in #{$!.class}: #{$!}");
 end;
